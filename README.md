@@ -1,5 +1,5 @@
 # NOTICE
-This is a fork of https://github.com/oblitum/rainbow 
+This is a fork of https://github.com/frazrepo/vim-rainbow
 
 # Rainbow Parentheses Improved
 
@@ -15,7 +15,8 @@ I've applied some minor corrections and modifications:
   role.
 * Changed default highlighted operators (now most punctuation) and highlighted
   braces (added `<` and `>` for C++, Rust, C# and Java).
-* Removed optional highlighting for operators. Now hard enabled.
+* ~~Removed optional highlighting for operators. Now hard enabled.~~
+* Re-added optional highlighting for operators. Off by default.
 * Changed loading autocommand for the events "syntax" and "colorscheme" so that
   the rainbow gets loaded only when there's syntax being applied and aways after
   switching colorschemes.
