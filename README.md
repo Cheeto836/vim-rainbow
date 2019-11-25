@@ -49,6 +49,11 @@ or just this to enable it globally:
 let g:rainbow_active = 1
 ```
 
+Use this option to enable rainbow highlighting of operators
+```vim
+let g:color_operators = 1
+```
+
 # Advanced Configuration
 
 An advanced configuration allows you to define what parentheses to use

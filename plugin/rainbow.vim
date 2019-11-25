@@ -71,16 +71,17 @@ func! rainbow#load(...)
         let b:loaded = [ ['(', ')'], ['\[', '\]'], ['{', '}'] ]
     endif
 
-    let b:operators = (a:0 < 2) ? '"\v[{\[(<_"''`#*/>)\]}]@![[:punct:]]|\*/@!|/[/*]@!|\<#@!|#@<!\>"' : a:2
-
-    if b:operators != ''
-        exe 'syn match op_lv0 '.b:operators
-        let cmd = 'syn match %s %s containedin=%s contained'
-        for [left , right] in b:loaded
-            for each in range(1, s:max)
-                exe printf(cmd, 'op_lv'.each, b:operators, 'lv'.each)
-            endfor
-        endfor
+    if exists('g:color_operators') && g:color_operators
+      let b:operators = (a:0 < 2) ? '"\v[{\[(<_"''`#*/>)\]}]@![[:punct:]]|\*/@!|/[/*]@!|\<#@!|#@<!\>"' : a:2
+      if b:operators != ''
+          exe 'syn match op_lv0 '.b:operators
+          let cmd = 'syn match %s %s containedin=%s contained'
+          for [left , right] in b:loaded
+              for each in range(1, s:max)
+                  exe printf(cmd, 'op_lv'.each, b:operators, 'lv'.each)
+              endfor
+          endfor
+      endif
     endif
 
     let str = 'TOP'
